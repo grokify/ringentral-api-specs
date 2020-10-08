@@ -25,8 +25,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
-      operationId: get-users-userId
-      description: Awesome API to get user info.
+      operationId: getUsers
+      description: |-
+        Awesome API to get user info. It pulls back the following properies:
+
+        * [Name](https://example.com/name)
+        * DateOfBirth
+        * CreationTime
       parameters:
         - schema:
             type: number
@@ -37,6 +42,8 @@ paths:
           in: query
           name: perPage
           description: ''
+      x-docs-level: Public
+      x-rate-limit-plan: Heavy
 components:
   schemas:
     User:
